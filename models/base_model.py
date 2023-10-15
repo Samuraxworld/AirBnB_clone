@@ -3,7 +3,12 @@
 
 import uuid
 from datetime import datetime
-from models import storage
+
+try:
+    from models import storage
+except ImportError:
+    import models
+    storage = models.storage
 
 
 class BaseModel:
